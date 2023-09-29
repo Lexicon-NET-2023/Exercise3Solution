@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Exercise3Solution
 {
-    internal class Person
+    public class Person
     {
 
         private int age;
