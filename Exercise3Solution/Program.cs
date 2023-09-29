@@ -1,8 +1,10 @@
-﻿namespace Exercise3Solution
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Exercise3Solution
 {
     internal class Program
     {
-      
+
         static void Main(string[] args)
         {
             //PersonHandler personHandler = new PersonHandler();
@@ -30,18 +32,36 @@
                 //    Console.WriteLine(error.UEMessage());
                 //}
                 //Console.ReadKey(); 
+                List<Animal> animals = new List<Animal>()
+                {
+                    new Bird("Birdie", 5, 15),
+                    new Dog("Doggy", 7, true),
+                    new Pelican("Pelle", 10, 20, 5),
+                    new Wolfman("Walle", 25, 0),
+                    new Wolf("Wille", 12, 5),
+                    new Dog("Dave", 9, false)
+                };
+                //List<Dog> dogs = new List<Dog>();
+                
 
-                Bird bird = new Bird("Bill", 5, 15);
-                Dog dog = new Dog("Dave", 7, true);
-                Pelican pelican = new Pelican("Pelle", 3, 20, 5);
-                Wolfman wolfman = new Wolfman("Walle", 25, 0);
+                foreach (Animal animal in animals)
+                {
+                    Console.WriteLine(animal.GetType().Name);
+                    Console.WriteLine(animal.DoSound());
+                    Console.WriteLine(animal.Stats());
+                    
+                    if (animal is IPerson)
+                    {
+                        var temp = animal as IPerson;
+                        Console.WriteLine(temp.Talk());
+                                            }
 
-                Console.WriteLine(bird.DoSound());
-                Console.WriteLine(dog.DoSound());
-                Console.WriteLine(pelican.DoSound());
-                Console.WriteLine(wolfman.DoSound());
-                Console.WriteLine(wolfman.Talk());
-
+                    if(animal is Dog)
+                    {
+                        var temp = animal as Dog;
+                        Console.WriteLine(temp.DoTrick());
+                    }
+                }
                 Console.ReadKey();
 
 
@@ -50,7 +70,7 @@
             {
                 Console.WriteLine(ex.Message);
             }
-            
+
 
             //person.Age = 35;
             //person.FName = "Jonathan";

@@ -18,5 +18,10 @@ namespace Exercise3Solution
         {
             return "*woff*";
         }
+
+        public string DoTrick()
+        {
+            return "Play dead";
+        }
     }
 }

@@ -19,5 +19,11 @@ namespace Exercise3Solution
         {
             return "*chirp*";
         }
+
+        public override string Stats()
+        {
+            //return base.Stats();
+            return $"{base.Stats()}, Wingspan: {WingSpan}";
+        }
     }
 }

@@ -18,5 +18,10 @@ namespace Exercise3Solution
         }
 
         public abstract string DoSound();
+
+        public virtual string Stats()
+        {
+            return $"Name: {Name}, Age: {Age} ";
+        }
     }
 }

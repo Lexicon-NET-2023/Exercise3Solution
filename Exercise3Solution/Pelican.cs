@@ -13,7 +13,12 @@ namespace Exercise3Solution
         public Pelican(string name, int age, int wingspan, int pouchsize)
             :base(name, age, wingspan)
         {
+            PouchSize = pouchsize; 
+        }
 
+        public override string Stats()
+        {
+            return base.Stats() + $", Pouch size: {PouchSize}";
         }
     }
 }
