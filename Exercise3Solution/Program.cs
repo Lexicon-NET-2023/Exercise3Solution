@@ -17,20 +17,32 @@
                 //Console.WriteLine($"My name is {person.FName} {person.LName}! I am {person.Age} years old!");
                 //Console.ReadKey();
 
-                List<UserError> errors = new List<UserError>
-                {
-                    new NumericInputError(),
-                    new TextInputError(),
-                    new NumericInputError(),
-                    new TextInputError()
-                };
+                //List<UserError> errors = new List<UserError>
+                //{
+                //    new NumericInputError(),
+                //    new TextInputError(),
+                //    new NumericInputError(),
+                //    new TextInputError()
+                //};
 
-                foreach (UserError error in errors)
-                {
-                    Console.WriteLine(error.UEMessage());
-                }
-                Console.ReadKey(); 
+                //foreach (UserError error in errors)
+                //{
+                //    Console.WriteLine(error.UEMessage());
+                //}
+                //Console.ReadKey(); 
 
+                Bird bird = new Bird("Bill", 5, 15);
+                Dog dog = new Dog("Dave", 7, true);
+                Pelican pelican = new Pelican("Pelle", 3, 20, 5);
+                Wolfman wolfman = new Wolfman("Walle", 25, 0);
+
+                Console.WriteLine(bird.DoSound());
+                Console.WriteLine(dog.DoSound());
+                Console.WriteLine(pelican.DoSound());
+                Console.WriteLine(wolfman.DoSound());
+                Console.WriteLine(wolfman.Talk());
+
+                Console.ReadKey();
 
 
             }
